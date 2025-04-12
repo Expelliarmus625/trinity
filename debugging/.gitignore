@@ -1,0 +1,74 @@
+# General OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Kubernetes
+*.kubeconfig
+*.yaml~         # temp files
+*.yml~          # temp files
+*.log
+
+# Helm
+charts/*/charts/
+charts/*/tmpcharts/
+charts/*/Chart.lock
+charts/*/values.yaml~
+*.tgz
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+terraform.tfvars
+.terraform.lock.hcl
+
+# Ansible
+*.retry
+
+# Secrets (Make sure secrets aren’t tracked!)
+secrets.yaml
+secrets/*.yaml
+*.enc.yaml
+
+# Bash / Shell scripts
+*.sh~
+*.bak
+
+# Python (if any scripts/tools use it)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node (if any tools use it)
+node_modules/
+npm-debug.log
+
+# CI/CD
+*.env
+.env.*
+.envrc
+.envrc.*
+.secret
+
+# Misc
+*.bak
+*.tmp
+*.out
+
+# Local tooling
+.kube/
+.kubecfg/
+.k9s/
+.kustomize/

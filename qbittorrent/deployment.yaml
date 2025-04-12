@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qbittorrent-deployment
+  namespace: qbittorrent
+  labels:
+    app: qbittorrent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qbittorrent
+
+  template:
+    metadata:
+      labels:
+        app: qbittorrent
+        name: qbittorrent
+    spec:
+      containers:
+        - name: qbittorrent
+          image: lscr.io/linuxserver/qbittorrent:latest
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: qbittorrent-config
+              mountPath: "/config"
+            - name: qbittorrent-data
+              mountPath: "/data/downloads"
+      volumes:
+        - name: qbittorrent-config
+          persistentVolumeClaim: 
+            claimName: qbittorrent-config
+        - name: qbittorrent-data
+          persistentVolumeClaim: 
+            claimName: qbittorrent-data
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qbittorrent
+  namespace: qbittorrent
+spec:
+  type: LoadBalancer
+  selector:
+    app: qbittorrent
+  ports:
+    - port: 80
+      targetPort: 8080
+      name: qbittorrent-port
+
+
+

@@ -1,0 +1,5 @@
+persistence:
+  homarrDatabase:
+    enabled: true
+    storageClassName: "default"
+    size: 1Gi
