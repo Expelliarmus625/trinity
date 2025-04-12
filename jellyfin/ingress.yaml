@@ -1,14 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: jellyfin-ingress
+  name: jellyfin
   namespace: jellyfin
   # annotations:
-  # nginx.ingress.kubernetes.io/rewrite-target: /
+  #   nginx.ingress.kubernetes.io/use-regex: "true"
+  #   nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
-    - host: trinity.local
+    - host: jellyfin.trinity.local
       http:
         paths:
           - path: /
@@ -17,4 +18,4 @@ spec:
               service:
                 name: jellyfin
                 port:
-                  number: 8096
+                  number: 80

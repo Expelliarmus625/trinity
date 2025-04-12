@@ -46,13 +46,12 @@ metadata:
   name: jellyfin
   namespace: jellyfin
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: jellyfin
   ports:
-    - port: 8096
+    - port: 80
       targetPort: 8096
-      nodePort: 30096
       name: jellyfin-ui
       protocol: TCP
   #   - 192.168.1.14
