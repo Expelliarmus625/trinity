@@ -28,6 +28,14 @@ spec:
               mountPath: "/cache"
             - name: jellyfin-media
               mountPath: "/media"
+          livenessProbe:
+            httpGet:
+              path: /System/Info/Public
+              port: 80
+              initialDelaySeconds: 30
+              periodSeconds: 10
+              failureThreshold: 2
+
       volumes:
         - name: jellyfin-config
           persistentVolumeClaim:
