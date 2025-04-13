@@ -76,7 +76,7 @@ metadata:
   namespace: grafana
 spec:
   ports:
-    - port: 3000
+    - port: 80
       protocol: TCP
       targetPort: http-grafana
   selector:
