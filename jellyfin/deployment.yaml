@@ -30,7 +30,7 @@ spec:
               mountPath: "/media"
           livenessProbe:
             httpGet:
-              path: /System/Info/Public
+              path: /health
               port: 8096
               initialDelaySeconds: 30
               periodSeconds: 10
