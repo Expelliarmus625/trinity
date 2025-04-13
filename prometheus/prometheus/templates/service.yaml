@@ -23,4 +23,4 @@ spec:
     app.kubernetes.io/name: prometheus
     app.kubernetes.io/instance: prometheus
   sessionAffinity: None
-  type: "Loadbalancer"
+  type: "LoadBalancer"
