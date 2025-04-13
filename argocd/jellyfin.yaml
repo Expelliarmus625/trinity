@@ -1,0 +1,356 @@
+apiVersion: v1
+items:
+- apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    creationTimestamp: "2025-04-12T17:46:32Z"
+    generation: 389
+    name: jellyfin
+    namespace: argocd
+    resourceVersion: "836677"
+    uid: 70aefee0-b875-4b2e-a000-08267241909a
+  spec:
+    destination:
+      namespace: jellyfin
+      server: https://kubernetes.default.svc
+    project: default
+    source:
+      directory:
+        jsonnet:
+          tlas:
+          - name: ""
+            value: ""
+      path: jellyfin
+      repoURL: https://github.com/Expelliarmus625/trinity
+      targetRevision: main
+  status:
+    controllerNamespace: argocd
+    health:
+      lastTransitionTime: "2025-04-13T08:53:02Z"
+      status: Healthy
+    history:
+    - deployStartedAt: "2025-04-12T17:47:11Z"
+      deployedAt: "2025-04-12T17:47:20Z"
+      id: 0
+      initiatedBy:
+        username: admin
+      revision: 13deb7f757dc0341ea3e87f1cb9a1881fb41d843
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    - deployStartedAt: "2025-04-12T18:03:43Z"
+      deployedAt: "2025-04-12T18:03:48Z"
+      id: 1
+      initiatedBy:
+        username: admin
+      revision: 13deb7f757dc0341ea3e87f1cb9a1881fb41d843
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    - deployStartedAt: "2025-04-12T18:05:34Z"
+      deployedAt: "2025-04-12T18:05:35Z"
+      id: 2
+      initiatedBy:
+        username: admin
+      revision: 56fe762bc7c59d2141ea53e5df23a6ac5310eaf7
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    - deployStartedAt: "2025-04-12T18:09:41Z"
+      deployedAt: "2025-04-12T18:09:42Z"
+      id: 3
+      initiatedBy:
+        username: admin
+      revision: 13deb7f757dc0341ea3e87f1cb9a1881fb41d843
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    - deployStartedAt: "2025-04-12T18:15:13Z"
+      deployedAt: "2025-04-12T18:15:18Z"
+      id: 4
+      initiatedBy:
+        username: admin
+      revision: 29a2a5ceeae5c5ea6428c4c8f162547c4131ad9b
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    - deployStartedAt: "2025-04-12T18:16:30Z"
+      deployedAt: "2025-04-12T18:16:31Z"
+      id: 5
+      initiatedBy:
+        username: admin
+      revision: 29a2a5ceeae5c5ea6428c4c8f162547c4131ad9b
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    - deployStartedAt: "2025-04-13T04:32:54Z"
+      deployedAt: "2025-04-13T04:32:57Z"
+      id: 6
+      initiatedBy:
+        username: admin
+      revision: b209c7a49d7cacdf5b973af310a9ebf106d7f41a
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    - deployStartedAt: "2025-04-13T04:39:50Z"
+      deployedAt: "2025-04-13T04:39:51Z"
+      id: 7
+      initiatedBy:
+        username: admin
+      revision: b209c7a49d7cacdf5b973af310a9ebf106d7f41a
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    - deployStartedAt: "2025-04-13T04:46:48Z"
+      deployedAt: "2025-04-13T04:46:50Z"
+      id: 8
+      initiatedBy:
+        username: admin
+      revision: 1f36f5ab83030e77b76d07f18ef50f4ccdaa6f9a
+      source:
+        directory:
+          jsonnet:
+            tlas:
+            - name: ""
+              value: ""
+        path: jellyfin
+        repoURL: https://github.com/Expelliarmus625/trinity
+        targetRevision: main
+    operationState:
+      finishedAt: "2025-04-13T04:46:50Z"
+      message: successfully synced (all tasks run)
+      operation:
+        initiatedBy:
+          username: admin
+        retry: {}
+        sync:
+          revision: 1f36f5ab83030e77b76d07f18ef50f4ccdaa6f9a
+          syncStrategy:
+            hook: {}
+      phase: Succeeded
+      startedAt: "2025-04-13T04:46:48Z"
+      syncResult:
+        resources:
+        - group: ""
+          hookPhase: Running
+          kind: PersistentVolume
+          message: persistentvolume/jellyfin-media unchanged
+          name: jellyfin-media
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ""
+          hookPhase: Running
+          kind: PersistentVolume
+          message: persistentvolume/jellyfin-cache unchanged
+          name: jellyfin-cache
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ""
+          hookPhase: Running
+          kind: PersistentVolume
+          message: persistentvolume/jellyfin-config unchanged
+          name: jellyfin-config
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ""
+          hookPhase: Running
+          kind: PersistentVolumeClaim
+          message: persistentvolumeclaim/jellyfin-cache unchanged
+          name: jellyfin-cache
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ""
+          hookPhase: Running
+          kind: PersistentVolumeClaim
+          message: persistentvolumeclaim/jellyfin-media unchanged
+          name: jellyfin-media
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ""
+          hookPhase: Running
+          kind: PersistentVolumeClaim
+          message: persistentvolumeclaim/jellyfin-config unchanged
+          name: jellyfin-config
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: ""
+          hookPhase: Running
+          kind: Service
+          message: service/jellyfin unchanged
+          name: jellyfin
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: apps
+          hookPhase: Running
+          kind: Deployment
+          message: deployment.apps/jellyfin configured
+          name: jellyfin
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        - group: networking.k8s.io
+          hookPhase: Running
+          kind: Ingress
+          message: ingress.networking.k8s.io/jellyfin unchanged
+          name: jellyfin
+          namespace: jellyfin
+          status: Synced
+          syncPhase: Sync
+          version: v1
+        revision: 1f36f5ab83030e77b76d07f18ef50f4ccdaa6f9a
+        source:
+          directory:
+            jsonnet:
+              tlas:
+              - name: ""
+                value: ""
+          path: jellyfin
+          repoURL: https://github.com/Expelliarmus625/trinity
+          targetRevision: main
+    reconciledAt: "2025-04-13T09:25:47Z"
+    resources:
+    - kind: PersistentVolume
+      name: jellyfin-cache
+      status: Synced
+      version: v1
+    - kind: PersistentVolume
+      name: jellyfin-config
+      status: Synced
+      version: v1
+    - kind: PersistentVolume
+      name: jellyfin-media
+      status: Synced
+      version: v1
+    - health:
+        status: Healthy
+      kind: PersistentVolumeClaim
+      name: jellyfin-cache
+      namespace: jellyfin
+      status: Synced
+      version: v1
+    - health:
+        status: Healthy
+      kind: PersistentVolumeClaim
+      name: jellyfin-config
+      namespace: jellyfin
+      status: Synced
+      version: v1
+    - health:
+        status: Healthy
+      kind: PersistentVolumeClaim
+      name: jellyfin-media
+      namespace: jellyfin
+      status: Synced
+      version: v1
+    - health:
+        status: Healthy
+      kind: Service
+      name: jellyfin
+      namespace: jellyfin
+      status: Synced
+      version: v1
+    - group: apps
+      health:
+        status: Healthy
+      kind: Deployment
+      name: jellyfin
+      namespace: jellyfin
+      status: Synced
+      version: v1
+    - group: networking.k8s.io
+      health:
+        status: Healthy
+      kind: Ingress
+      name: jellyfin
+      namespace: jellyfin
+      status: Synced
+      version: v1
+    sourceHydrator: {}
+    sourceType: Directory
+    summary:
+      externalURLs:
+      - http://jellyfin.trinity.local/
+      images:
+      - jellyfin/jellyfin:latest
+    sync:
+      comparedTo:
+        destination:
+          namespace: jellyfin
+          server: https://kubernetes.default.svc
+        source:
+          directory:
+            jsonnet:
+              tlas:
+              - name: ""
+                value: ""
+          path: jellyfin
+          repoURL: https://github.com/Expelliarmus625/trinity
+          targetRevision: main
+      revision: 1f36f5ab83030e77b76d07f18ef50f4ccdaa6f9a
+      status: Synced
+kind: List
+metadata:
+  resourceVersion: ""
