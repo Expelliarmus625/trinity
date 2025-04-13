@@ -5,6 +5,7 @@ metadata:
   name: grafana-pvc
   namespace: grafana
 spec:
+  storageClassName: local
   accessModes:
     - ReadWriteOnce
   resources:
