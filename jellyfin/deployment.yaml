@@ -32,9 +32,9 @@ spec:
             httpGet:
               path: /health
               port: 8096
-              initialDelaySeconds: 30
-              periodSeconds: 10
-              failureThreshold: 2
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
 
       volumes:
         - name: jellyfin-config
