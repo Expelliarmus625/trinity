@@ -29,6 +29,14 @@ data:
     - /etc/config/rules
     - /etc/config/alerts
     scrape_configs:
+    - job_name: jellyfin
+      metrics_path: /metrics
+      static_configs:
+      - targets:
+        - jellyfin.jellyfin.svc
+        labels:
+          app: jellyfin
+          
     - job_name: prometheus
       static_configs:
       - targets:
