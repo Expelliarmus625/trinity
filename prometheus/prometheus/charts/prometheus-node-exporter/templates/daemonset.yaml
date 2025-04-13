@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: prometheus-prometheus-node-exporter
-  namespace: default
+  namespace: prometheus
   labels:
     helm.sh/chart: prometheus-node-exporter-4.45.0
     app.kubernetes.io/managed-by: Helm

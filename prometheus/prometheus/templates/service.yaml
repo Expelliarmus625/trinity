@@ -11,7 +11,7 @@ metadata:
     helm.sh/chart: prometheus-27.8.0
     app.kubernetes.io/part-of: prometheus
   name: prometheus-server
-  namespace: default
+  namespace: prometheus
 spec:
   ports:
     - name: http

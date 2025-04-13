@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/instance: prometheus
     app.kubernetes.io/version: "v0.28.1"
     app.kubernetes.io/managed-by: Helm
-  namespace: default
+  namespace: prometheus
 spec:
   type: ClusterIP
   ports:
@@ -33,7 +33,7 @@ metadata:
     app.kubernetes.io/instance: prometheus
     app.kubernetes.io/version: "v0.28.1"
     app.kubernetes.io/managed-by: Helm
-  namespace: default
+  namespace: prometheus
 spec:
   clusterIP: None
   ports:
