@@ -1,21 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: jellyfin
-  namespace: jellyfin
-  # annotations:
+  name: homarr
+  namespace: homarr
+  annotations:
   #   nginx.ingress.kubernetes.io/use-regex: "true"
-  #   nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
-    - host: jellyfin.trinity.com
+    - host: homarr.trinity.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: jellyfin
+                name: homarr
                 port:
                   number: 80
