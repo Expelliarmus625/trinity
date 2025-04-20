@@ -26,7 +26,7 @@ spec:
               mountPath: "/home/node/.n8n"
           env:
             - name: N8N_SECURE_COOKIE
-              value: false
+              value: "false"
 
           # livenessProbe:
           #   httpGet:
