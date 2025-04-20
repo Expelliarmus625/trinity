@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: n8n
-          image: jellyfin/jellyfin:latest
+          image: docker.n8n.io/n8nio/n8n
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - name: n8n-data
