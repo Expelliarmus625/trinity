@@ -19,11 +19,15 @@ spec:
     spec:
       containers:
         - name: n8n
-          image: docker.n8n.io/n8nio/n8n
+          image: docker.n8n.io/n8nio/n8n:1.89.2
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - name: n8n-data
               mountPath: "/home/node/.n8n"
+          env:
+            - name: N8N_SECURE_COOKIE
+              value: false
+
           # livenessProbe:
           #   httpGet:
           #     path: /health
