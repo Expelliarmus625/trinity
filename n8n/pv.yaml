@@ -13,7 +13,7 @@ spec:
     path: /mnt/k8s/volumes/n8n-data
   nodeAffinity:
     required:
-      nodesSelectorTerms:
+      nodeSelectorTerms:
         - matchExpressions:
             - key: kubernetes.io/hostname
               operator: In
