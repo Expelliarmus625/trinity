@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-assistant
+  namespace: home-assistant
+  labels:
+    app: home-assistant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: home-assistant
+
+  template:
+    metadata:
+      labels:
+        app: home-assistant
+        name: home-assistant
+    spec:
+      hostNetwork: true
+      containers:
+        - name: home-assistant
+          image: homeassistant/home-assistant:stable
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: homeassistant-config
+              mountPath: "/config"
+          env:
+            - name: TZ
+              value: "Asia/Calcutta"
+
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 8096
+          #   initialDelaySeconds: 10
+          #   periodSeconds: 10
+          #   failureThreshold: 3
+          #
+      volumes:
+        - name: homeassistant-config
+          persistentVolumeClaim:
+            claimName: homeassistant-config
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant
+  namespace: home-assistant
+spec:
+  type: ClusterIP
+  selector:
+    app: home-assistant
+  ports:
+    - port: 80
+      targetPort: 8123
+      name: home-assistant-ui
+      protocol: TCP
+  #   - 192.168.1.14

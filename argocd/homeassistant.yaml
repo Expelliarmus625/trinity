@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: home-assistant
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/expelliarmus625/trinity.git
+    targetRevision: main
+    path: home-assistant
+
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: home-assistant
