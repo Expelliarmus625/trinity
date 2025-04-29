@@ -4,7 +4,7 @@ metadata:
   name: n8n-data
   namespace: n8n
 spec:
-  storageClassName: local
+  storageClassName: nfs-client
   accessModes:
     - ReadWriteOnce
   resources:

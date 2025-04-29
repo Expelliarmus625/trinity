@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/expelliarmus625/trinity.git
-    targetRevision: main
+    targetRevision: dev
     path: n8n
 
     directory:
