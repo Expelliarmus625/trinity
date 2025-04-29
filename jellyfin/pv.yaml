@@ -111,7 +111,7 @@ metadata:
   name: jellyfin-media
   namespace: jellyfin
 spec:
-  storageClassName: local
+  storageClassName: nfs-client
   accessModes:
     - ReadWriteOnce
   resources:
