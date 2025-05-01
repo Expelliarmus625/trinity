@@ -4,12 +4,10 @@ metadata:
   name: n8n-data
   namespace: n8n
 spec:
-  storageClassName: local
+  storageClassName: nfs-client
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
-  selector:
-    matchLabels:
-      app: n8n
+
