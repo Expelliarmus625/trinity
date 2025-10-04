@@ -79,7 +79,7 @@ metadata:
   name: jellyfin-config
   namespace: jellyfin
 spec:
-  storageClassName: nfs-client
+  storageClassName: local
   accessModes:
     - ReadWriteOnce
   resources:
@@ -95,7 +95,7 @@ metadata:
   name: jellyfin-cache
   namespace: jellyfin
 spec:
-  storageClassName: nfs-client
+  storageClassName: local
   accessModes:
     - ReadWriteOnce
   resources:
@@ -111,7 +111,7 @@ metadata:
   name: jellyfin-media
   namespace: jellyfin
 spec:
-  storageClassName: nfs-client
+  storageClassName: local
   accessModes:
     - ReadWriteOnce
   resources:
