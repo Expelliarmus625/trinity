@@ -9,38 +9,26 @@ spec:
   accessModes: 
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: local
-  local:
-    path: /mnt/k8s/volumes/prometheus-server
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In 
-              values:
-                - kube-worker-2
+  storageClassName: nfs-csi
+  nfs:
+    server: 192.168.1.50
+    path: /mnt/truenas-pool-1/data/persistent-volumes/prometheus-server
+  volumeMode: Filesystem
 
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: prometheus-alertmanager
-
 spec:
   capacity:
     storage: 2Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: local
-  local:
-    path: /mnt/k8s/volumes/prometheus-alertmanager
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - kube-worker-2
+  storageClassName: nfs-csi
+  nfs:
+    server: 192.168.1.50
+    path: /mnt/truenas-pool-1/data/persistent-volumes/prometheus-alertmanager
+  volumeMode: Filesystem
+
