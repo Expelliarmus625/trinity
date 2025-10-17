@@ -9,7 +9,7 @@ spec:
   capacity:
     storage: 1Gi
   persistentVolumeReclaimPolicy: Retain
-   nfs:
+  nfs:
     server: 192.168.1.50
     path: /mnt/truenas-pool-1/data/persistent-volumes/grafana-pv
   volumeMode: Filesystem
