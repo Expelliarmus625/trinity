@@ -3,19 +3,14 @@ kind: PersistentVolume
 metadata:
   name: grafana-pv
 spec:
-  storageClassName: local
+  storageClassName: nfs-csi
   accessModes:
     - ReadWriteOnce
   capacity:
     storage: 1Gi
   persistentVolumeReclaimPolicy: Retain
-  local:
-    path: /mnt/k8s/volumes/grafana-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - kube-worker-2
+   nfs:
+    server: 192.168.1.50
+    path: /mnt/truenas-pool-1/data/persistent-volumes/grafana-pv
+  volumeMode: Filesystem
+
